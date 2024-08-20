@@ -3,7 +3,7 @@ variable "location" {
 }
 
 variable "location_abbreviation" {
-  description = "(Required) The Azure Region Abbreviation."
+  description = "(Required) The Azure Region abbreviation."
 }
 
 variable "storage_account_id" {

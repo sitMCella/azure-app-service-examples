@@ -34,11 +34,11 @@ Refer to: https://learn.microsoft.com/en-us/azure/app-service/deploy-run-package
 
 ## Configuration
 
-The Terraform project is located in the directory "subscription/westeurope" and is associated to one Azure Subscription.
+The Terraform project is located in the directory "subscription/westeurope" and must be associated to one Azure Subscription.
 
 Specify the Subscription ID in the file `providers.tf`.
 
-Create one file `secret/main.json` with the following content inside each Subscription directory:
+Create one file `secret/main.json` with the following content in the current directory:
 ```
 {
   "tenant_id": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -46,7 +46,7 @@ Create one file `secret/main.json` with the following content inside each Subscr
   "client_secret": "xxxxxxxxxxxxxxxxx"
 }
 ```
-The "tenant_id" property corresponds to the Entra ID tenant.
+The `tenant_id` property corresponds to the Entra ID tenant.
 Specify the value of the `client_id` and `client_secret` properties as described in the following section.
 
 ### Authentication
@@ -55,7 +55,7 @@ The Terraform project makes use of one Azure Service Principal account for authe
 
  1. Create one Azure Service Principal Account (App Registration) in Azure.
  2. Generate the secret for the Azure Service Principal account in Azure.
- 3. Add the "client_id" and "client_secret" values into the `secret/main.json` file.
+ 3. Add the `client_id` and `client_secret` values into the `secret/main.json` file.
  4. Assign the RBAC roles "Contributor", "User Access Administrator", and "Storage File Data SMB Share Elevated Contributor" on the Subscription level to the Service Principal account.
 
 ### Terraform Project Initialization
@@ -75,8 +75,8 @@ terraform init -backend-config="../../secret/main.json" -reconfigure
 ### Configure parameters
 
 Configure the following variables in the file `terraform.tfvars`:
-- zip_deploy_file: The path of the ZIP file with the web application
-- storage_share_mount_path: The mount path of the Azure File Share
+- `zip_deploy_file`: The path of the ZIP file with the web application
+- `storage_share_mount_path`: The mount path of the Azure File Share
 
 ### Verify the Updates in the Terraform Code
 
