@@ -18,12 +18,12 @@ https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
 ## Web Application
 
-Before proceeding with creating the Azure resources using Terraform, you must build and publish the ASP.NET web application locally.
+Before proceeding with the creation of the Azure resources using Terraform, you must build and publish the ASP.NET web application locally.
 
 ### Compile Web Application
 
 1. Install .NET 8 in the local environment.
-2. Build and publish the web application located in the directory "Application", follow the instructions in the README.md file.
+2. Build and publish the web application located in the directory "Application", follow the instructions in the [README.md](https://github.com/sitMCella/azure-app-service-examples/blob/main/terraform_dotnet_public/README.md) file.
 
 ### Create ZIP package
 
