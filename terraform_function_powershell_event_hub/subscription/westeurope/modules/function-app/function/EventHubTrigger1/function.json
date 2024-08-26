@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "eventHubMessages",
+      "direction": "in",
+      "eventHubName": "evheventhubprodweu001",
+      "connection": "evhnseventhubprodweu001_RootManageSharedAccessKey_EVENTHUB",
+      "cardinality": "many",
+      "consumerGroup": "$Default"
+    },
+    {
+      "name": "blobName",
+      "type": "blob",
+      "path": "container/{rand-guid}.txt",
+      "connection": "Storageoutput",
+      "direction": "out"
+    }
+  ]
+}
