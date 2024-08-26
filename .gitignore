@@ -133,3 +133,6 @@ terraform.tfstate.backup
 
 # Secrets
 secret/
+
+# Function ZIP file
+function.zip
